@@ -14,10 +14,16 @@ namespace LinkShortenService.Site
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                name: "GetLayout",
+                url: "",
+                defaults: new { controller = "Route", action = "GetLayout" }
+                );
+
+            routes.MapRoute(
+                name: "GetView",
+                url: "views/{section}/{view}",
+                defaults: new { controller = "Route", action = "GetView" }
+                );
         }
     }
 }

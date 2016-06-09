@@ -1,0 +1,44 @@
+﻿@using System.Web.Optimization
+
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>LinkShortener</title>
+    @Styles.Render("~/bundles/css/")
+    @Scripts.Render("~/bundles/app/libs/")
+    @Scripts.Render("~/bundles/app/webapp/")
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-main">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ng-href="#/" ng-click="item = 0">LinkShortener</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="menu-main">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown" ng-class="{active : item == 1}">
+                        <a ng-href="#{{ 'parent.create' | routeSegmentUrl }}" ng-click="item = 1">Создать ссылку</a>
+                    </li>
+                    <li class="dropdown" ng-class="{active : item == 2}">
+                        <a ng-href="#{{ 'parent.list' | routeSegmentUrl }}" ng-click="item = 2">Список ссылок</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="app-view-segment: 0">
+
+    </div>
+</body>
+</html>

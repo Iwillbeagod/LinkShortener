@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using System.Web.Optimization;
 
 namespace LinkShortenService.Site
 {
@@ -17,7 +18,10 @@ namespace LinkShortenService.Site
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //register bundles
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
